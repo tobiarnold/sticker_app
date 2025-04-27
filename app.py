@@ -4,7 +4,7 @@ import uuid
 
 def main():
     st.set_page_config(page_title="Sticker App", page_icon="🖼️", layout="centered")
-    st.header("Sticker Goat Gotta catch em all 🖼️🥳")
+    st.header("Sticker Goat gotta catch em all 🖼️🥳")
     st.write("Du kannst Sticker entweder fotografieren oder aus deiner Galerie hochladen")
     # Kamera
     st.subheader("📷 Aktivie die Kamera")

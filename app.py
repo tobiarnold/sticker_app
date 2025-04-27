@@ -10,8 +10,8 @@ def main():
     st.subheader("📷 Aktivie die Kamera")
     kamera_aktiv = st.toggle("📷 Kamera aktivieren")
     camera_image = None
-    file_name = None  # Initialize file_name
-    file_bytes = None  # Initialize file_bytes
+    file_name = None  
+    file_bytes = None  
     if kamera_aktiv:
         camera_image = st.camera_input("Fotografie den Sticker")
     # File Upload
@@ -19,14 +19,13 @@ def main():
     uploaded_file = st.file_uploader("Wähle ein Bild aus", type=["jpg", "png", "jpeg"])
     if camera_image is not None:
         st.image(camera_image, caption="Fotografiertes Bild", use_column_width=True)
-        file_bytes = camera_image.getvalue()  # Convert to bytes for upload
-        file_name = f"{uuid.uuid4()}.png"  # Unique file name for the image
+        file_bytes = camera_image.getvalue()  
+        file_name = f"{uuid.uuid4()}.png"  
     elif uploaded_file is not None:
         st.image(uploaded_file, caption="Hochgeladenes Bild", use_column_width=True)
         file_bytes = uploaded_file.read()  # Convert to bytes for upload
         file_name = f"{uuid.uuid4()}.png"  # Unique file name for the image
         st.write(file_name)
-    # If neither camera nor file upload is provided, exit early
     if file_name is None or file_bytes is None:
         st.error("❌ Kein Bild zum Hochladen ausgewählt.")
         return

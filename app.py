@@ -23,8 +23,8 @@ def main():
         file_name = f"{uuid.uuid4()}.png"  
     elif uploaded_file is not None:
         st.image(uploaded_file, caption="Hochgeladenes Bild", use_column_width=True)
-        file_bytes = uploaded_file.read()  # Convert to bytes for upload
-        file_name = f"{uuid.uuid4()}.png"  # Unique file name for the image
+        file_bytes = uploaded_file.read()  
+        file_name = f"{uuid.uuid4()}.png"  #eindeutiger Name
         st.write(file_name)
     if file_name is None or file_bytes is None:
         st.error("❌ Kein Bild zum Hochladen ausgewählt.")
